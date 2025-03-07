@@ -30,16 +30,16 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println("ShackBurger를 고르셨습니다. 6900원입니다.");
+                    System.out.println(menuItem1.getBurgerName()+"를 고르셨습니다. "+menuItem1.getBurgerPrice()+"원입니다.");
                     break;
                 case 2:
-                    System.out.println("SmokeShack를 고르셨습니다. 8900원입니다.");
+                    System.out.println(menuItem2.getBurgerName()+"를 고르셨습니다. "+menuItem2.getBurgerPrice()+"원입니다.");
                     break;
                 case 3:
-                    System.out.println("Cheeseburger를 고르셨습니다. 6900원입니다.");
+                    System.out.println(menuItem3.getBurgerName()+"를 고르셨습니다. "+menuItem3.getBurgerPrice()+"원입니다.");
                     break;
                 case 4:
-                    System.out.println("Hamburger를 고르셨습니다. 5400원입니다.");
+                    System.out.println(menuItem4.getBurgerName()+"를 고르셨습니다. "+menuItem4.getBurgerPrice()+"원입니다.");
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
