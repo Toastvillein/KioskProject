@@ -12,11 +12,11 @@ public class Menu {
     //List<MenuItem>을 가져와서 관리하도록 변경
     List<MenuItem> itemList = new ArrayList<>();
 
-    // List의 생성자
+    // itemList의 생성자
     public Menu(List<MenuItem> itemList) {
         this.itemList = itemList;
     }
-
+    // category의 생성자
     public Menu (String category){
         this.category = category;
     }

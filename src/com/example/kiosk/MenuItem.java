@@ -1,13 +1,15 @@
 package com.example.kiosk;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MenuItem {
     // 버거 이름 가격 설명 선언
+    // int id int quantity
     private String burgerName;
     private int burgerPrice;
     private String burgerDescription;
+
 
     public MenuItem (String burgerName,int burgerPrice,String burgerDescription) {
         this.burgerName = burgerName;
@@ -32,5 +34,7 @@ public class MenuItem {
     public String getBurgerDescription(){
         return burgerDescription;
     }
+
+
 
 }
