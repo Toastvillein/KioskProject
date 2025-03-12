@@ -76,6 +76,7 @@ public class Kiosk {
                         System.out.println("1.추가    2.취소");
                         int choice3 = scanner.nextInt();
                         if (choice3 == 2) {
+                            System.out.println("메뉴로 돌아갑니다.");
                             continue;
                         } else if (choice3 == 1) {
                             System.out.println("장바구니에 추가 되었습니다.");
