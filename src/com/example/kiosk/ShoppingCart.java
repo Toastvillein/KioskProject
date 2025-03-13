@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ShoppingCart {
+public class ShoppingCart<K,N> {
     //장바구니 필드선언 Map
     Map<MenuItem ,Integer> cartMap = new HashMap<>();
 
     // 메뉴 이름과 값을 Map에 저장하는 메서드
-    public void addCart(MenuItem menu, int quantity){
+    public void addCart(MenuItem menu, Integer quantity){
         cartMap.put(menu,cartMap.getOrDefault(menu, 0)+1);
     }
 
@@ -34,7 +34,7 @@ public class ShoppingCart {
         for (Map.Entry<MenuItem, Integer> entry : cartMap.entrySet()) {
             MenuItem menuItem = entry.getKey();
             int quantity = entry.getValue();
-            totalPrice += menuItem.getBurgerPrice()*quantity;
+            totalPrice += menuItem.getBurgerPrice().intValue()*quantity;
         }
         //System.out.print(totalPrice+"원");
         return totalPrice;

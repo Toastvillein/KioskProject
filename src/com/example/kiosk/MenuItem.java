@@ -3,15 +3,15 @@ package com.example.kiosk;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MenuItem {
+public class MenuItem<T extends Number> {
     // 버거 이름 가격 설명 선언
     // int id int quantity 가 있는게 베스트
     private String burgerName;
-    private int burgerPrice;
+    private T burgerPrice;
     private String burgerDescription;
 
 
-    public MenuItem (String burgerName,int burgerPrice,String burgerDescription) {
+    public MenuItem (String burgerName,T burgerPrice,String burgerDescription) {
         this.burgerName = burgerName;
         this.burgerPrice = burgerPrice;
         this.burgerDescription = burgerDescription;
@@ -27,7 +27,7 @@ public class MenuItem {
         return burgerName;
     }
 
-    public int getBurgerPrice(){
+    public T getBurgerPrice(){
         return burgerPrice;
     }
 

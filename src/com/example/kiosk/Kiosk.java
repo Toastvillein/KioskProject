@@ -51,8 +51,30 @@ public class Kiosk {
                     System.out.println(System.lineSeparator()+"1.주문  2.돌아가기");
                     int choice4 = scanner.nextInt();
                     if (choice4==1){
-                        System.out.println("주문이 완료되었습니다. 금액은 "+cart.fullPrice()+"원 입니다.");
-                        break;
+                        System.out.println("할인 정보를 입력해주세요."+System.lineSeparator()+
+                                "1. 국가유공자 : 10%"+System.lineSeparator()+
+                                "2. 군인 : 5%"+System.lineSeparator()+
+                                "3. 학생 : 3%"+System.lineSeparator()+
+                                "4. 일반 : 0%");
+                        int choice5 = scanner.nextInt();
+                        switch (choice5){
+                            case 1:
+                                System.out.println("주문이 완료되었습니다. 금액은 "+ (cart.fullPrice()-
+                                        UserDiscount.MERITORIOUS.meritorious(cart.fullPrice()))+"원 입니다.");
+                                break;
+                            case 2:
+                                System.out.println("주문이 완료되었습니다. 금액은 "+(cart.fullPrice()-
+                                        UserDiscount.SOLDIER.soldier(cart.fullPrice()))+"원 입니다.");
+                                break;
+                            case 3 :
+                                System.out.println("주문이 완료되었습니다. 금액은 "+(cart.fullPrice()-
+                                        UserDiscount.STUDENT.student(cart.fullPrice()))+"원 입니다.");
+                                break;
+                            case 4:
+                                System.out.println("주문이 완료되었습니다. 금액은 "+cart.fullPrice()+"원 입니다.");
+                                break;
+                        }   break;
+
                     } else if (choice4==2) {
                         System.out.println("메뉴로 돌아갑니다.");
                         continue;
