@@ -39,4 +39,13 @@ public class ShoppingCart<K,N> {
         //System.out.print(totalPrice+"원");
         return totalPrice;
     }
+
+    // 특정 메뉴를 빼는 메서드
+    public void removeCart(Map<MenuItem,Integer> cartMap, String removeKey){
+        cartMap.keySet().stream()
+                .filter(key -> key.equals(removeKey))
+                .findFirst()
+                .ifPresent(key->cartMap.remove(key));
+    }
+
 }
