@@ -22,19 +22,21 @@ public class ShoppingCart {
         });
     }
 
+
     // Map 값을 초기화하는 메서드
     public void clearCart(){
         cartMap.clear();
     }
 
     // 총 금액 메서드
-    public void fullPrice(){
+    public int fullPrice(){
         int totalPrice = 0;
         for (Map.Entry<MenuItem, Integer> entry : cartMap.entrySet()) {
             MenuItem menuItem = entry.getKey();
             int quantity = entry.getValue();
             totalPrice += menuItem.getBurgerPrice()*quantity;
         }
-        System.out.print(totalPrice+"원");
+        //System.out.print(totalPrice+"원");
+        return totalPrice;
     }
 }

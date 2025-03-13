@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class MenuItem {
     // 버거 이름 가격 설명 선언
-    // int id int quantity
+    // int id int quantity 가 있는게 베스트
     private String burgerName;
     private int burgerPrice;
     private String burgerDescription;
