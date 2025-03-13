@@ -38,58 +38,58 @@ public class Kiosk {
                 System.out.println("4. Orders");
                 System.out.println("5. Cancel");
             }
-                int choice1 = scanner.nextInt();
-                if (choice1 == 1) {
+                int categoryChoice = scanner.nextInt();
+                if (categoryChoice == 1) {
                     menu.showMenuitem();
                     System.out.println("0. 뒤로가기");
-                } else if (choice1==4 && !cart.cartMap.isEmpty()) {
+                } else if (categoryChoice==4 && !cart.cartMap.isEmpty()) {
                     System.out.println("아래와 같이 주문 하시겠습니까?"+System.lineSeparator());
                     System.out.println("[Orders]");
                     cart.showCart();
                     System.out.println("[Total]");
                     System.out.println(cart.fullPrice()+"원");
                     System.out.println(System.lineSeparator()+"1.주문  2.돌아가기");
-                    int choice4 = scanner.nextInt();
-                    if (choice4==1){
+                    int discountChoice = scanner.nextInt();
+                    if (discountChoice==1){
                         System.out.println("할인 정보를 입력해주세요."+System.lineSeparator()+
                                 "1. 국가유공자 : 10%"+System.lineSeparator()+
                                 "2. 군인 : 5%"+System.lineSeparator()+
                                 "3. 학생 : 3%"+System.lineSeparator()+
                                 "4. 일반 : 0%");
-                        int choice5 = scanner.nextInt();
-                        switch (choice5){
+                        int orderChoice = scanner.nextInt();
+                        switch (orderChoice){
                             case 1:
-                                System.out.println("주문이 완료되었습니다. 금액은 "+ (cart.fullPrice()-
-                                        UserDiscount.MERITORIOUS.meritorious(cart.fullPrice()))+"원 입니다.");
+                                System.out.println("주문이 완료되었습니다. 금액은 "+(cart.fullPrice()-
+                                        UserDiscount.MERITORIOUS.doDicount(cart.fullPrice()))+"원 입니다.");
                                 break;
                             case 2:
                                 System.out.println("주문이 완료되었습니다. 금액은 "+(cart.fullPrice()-
-                                        UserDiscount.SOLDIER.soldier(cart.fullPrice()))+"원 입니다.");
+                                        UserDiscount.SOLDIER.doDicount(cart.fullPrice()))+"원 입니다.");
                                 break;
                             case 3 :
                                 System.out.println("주문이 완료되었습니다. 금액은 "+(cart.fullPrice()-
-                                        UserDiscount.STUDENT.student(cart.fullPrice()))+"원 입니다.");
+                                        UserDiscount.STUDENT.doDicount(cart.fullPrice()))+"원 입니다.");
                                 break;
                             case 4:
                                 System.out.println("주문이 완료되었습니다. 금액은 "+cart.fullPrice()+"원 입니다.");
                                 break;
                         }   break;
 
-                    } else if (choice4==2) {
+                    } else if (discountChoice==2) {
                         System.out.println("메뉴로 돌아갑니다.");
                         continue;
                     } else {
                         System.out.println("잘못된 입력입니다.");
                         continue;
                     }
-                } else if (choice1==5 && !cart.cartMap.isEmpty()) {
+                } else if (categoryChoice==5 && !cart.cartMap.isEmpty()) {
                     try {
                         System.out.println("진행 중인 주문을 취소합니다.");
                         continue;
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-                } else if (choice1 == 0) {
+                } else if (categoryChoice == 0) {
                     System.out.println("프로그램을 종료합니다.");
                     break;
                 } else {
@@ -97,22 +97,22 @@ public class Kiosk {
                     continue;
                 }
 
-                int choice2 = scanner.nextInt();
+                int menuChoice = scanner.nextInt();
 
-                if (choice2 != 0) {
+                if (menuChoice != 0) {
                     try {
-                        System.out.println(menu.getItemList().get(choice2 - 1).getBurgerName() + "를 고르셨습니다. "
-                                + menu.getItemList().get(choice2 - 1).getBurgerPrice() + "원입니다.");
+                        System.out.println(menu.getItemList().get(menuChoice - 1).getBurgerName() + "를 고르셨습니다. "
+                                + menu.getItemList().get(menuChoice - 1).getBurgerPrice() + "원입니다.");
                         System.out.println("장바구니에 추가 하시겠습니까?");
                         System.out.println("1.추가    2.취소");
-                        int choice3 = scanner.nextInt();
-                        if (choice3 == 2) {
+                        int cartChoice = scanner.nextInt();
+                        if (cartChoice == 2) {
                             System.out.println("메뉴로 돌아갑니다.");
                             continue;
-                        } else if (choice3 == 1) {
+                        } else if (cartChoice == 1) {
                             System.out.println("장바구니에 추가 되었습니다.");
                             System.out.println("장바구니 목록");
-                            cart.addCart(menu.getItemList().get(choice2 - 1), 0);
+                            cart.addCart(menu.getItemList().get(menuChoice - 1), 0);
                             cart.showCart();
                         }
                         Thread.sleep(1500);
@@ -120,7 +120,7 @@ public class Kiosk {
                         System.out.println("해당하는 메뉴가 없습니다.");
                         throw new RuntimeException(e);
                     }
-                } else if (choice2 == 0) {
+                } else if (menuChoice == 0) {
                     System.out.println("카테고리 선택메뉴로 돌아갑니다.");
                     continue;
                 }

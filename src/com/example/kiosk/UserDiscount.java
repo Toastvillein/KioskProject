@@ -9,19 +9,8 @@ public enum UserDiscount {
         this.discount = discount;
     }
 
-    public double getDiscount(){
-        return discount;
+    public double doDicount(int a){
+        return a*discount;
     }
 
-    public double meritorious(int a){
-        return a*MERITORIOUS.getDiscount();
-    }
-
-    public double soldier(int a){
-        return a* SOLDIER.getDiscount();
-    }
-
-    public double student(int a){
-        return a* STUDENT.getDiscount();
-    }
 }
