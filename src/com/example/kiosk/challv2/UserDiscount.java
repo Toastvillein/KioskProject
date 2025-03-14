@@ -1,4 +1,4 @@
-package com.example.kiosk;
+package com.example.kiosk.challv2;
 
 public enum UserDiscount {
     MERITORIOUS(0.1),SOLDIER(0.05),STUDENT(0.03);
@@ -12,5 +12,4 @@ public enum UserDiscount {
     public double doDicount(int a){
         return a*discount;
     }
-
 }

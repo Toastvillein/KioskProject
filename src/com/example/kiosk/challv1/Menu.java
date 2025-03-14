@@ -1,8 +1,6 @@
-package com.example.kiosk;
-
+package com.example.kiosk.challv1;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Menu {
     // MenuItem 클래스를 관리하는 클래스
@@ -22,22 +20,13 @@ public class Menu {
         this.category = category;
     }
 
-
     // List에 포함된 MenuItem을 순차적으로 보여주는 함수
-//    public void showMenuitem(){
-//        for (int i=0; i< itemList.size(); i++ ) {
-//            System.out.print(i+1+". ");
-//            System.out.println(itemList.get(i));
-//        }
-//    }
     public void showMenuitem(){
-        IntStream.range(0, itemList.size())
-                .forEach(i -> System.out.println((i+1)+"."+itemList.get(i)));
+        for (int i=0; i< itemList.size(); i++ ) {
+            System.out.print(i+1+". ");
+            System.out.println(itemList.get(i));
+        }
     }
-
-    // 내가 생각했던 스트림 구조
-    // List<MenuItem> result = itemList.stream().중간연산자().최종연산자();
-
 
     // category 게터
     public String getCategory() {

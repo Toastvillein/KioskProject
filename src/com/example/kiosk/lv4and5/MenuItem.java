@@ -1,17 +1,12 @@
-package com.example.kiosk;
+package com.example.kiosk.lv4and5;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class MenuItem<T extends Number> {
+public class MenuItem {
     // 버거 이름 가격 설명 선언
-    // int id int quantity 가 있는게 베스트
     private String burgerName;
-    private T burgerPrice;
+    private int burgerPrice;
     private String burgerDescription;
 
-
-    public MenuItem (String burgerName,T burgerPrice,String burgerDescription) {
+    public MenuItem (String burgerName,int burgerPrice,String burgerDescription) {
         this.burgerName = burgerName;
         this.burgerPrice = burgerPrice;
         this.burgerDescription = burgerDescription;
@@ -27,14 +22,12 @@ public class MenuItem<T extends Number> {
         return burgerName;
     }
 
-    public T getBurgerPrice(){
+    public int getBurgerPrice(){
         return burgerPrice;
     }
 
     public String getBurgerDescription(){
         return burgerDescription;
     }
-
-
 
 }

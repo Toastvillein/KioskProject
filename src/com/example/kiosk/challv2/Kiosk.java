@@ -1,4 +1,4 @@
-package com.example.kiosk;
+package com.example.kiosk.challv2;
 
 import java.util.*;
 
@@ -125,8 +125,5 @@ public class Kiosk {
                     continue;
                 }
         }
-
-
-
     }
 }

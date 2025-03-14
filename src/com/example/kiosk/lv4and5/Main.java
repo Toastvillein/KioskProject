@@ -1,4 +1,4 @@
-package com.example.kiosk;
+package com.example.kiosk.lv4and5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,4 +10,3 @@ public class Main {
         kiosk.start();
     }
 }
-
